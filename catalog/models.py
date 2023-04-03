@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse  # Used to generate URLs by reversing the URL patterns
 
 
 class Genre(models.Model):
@@ -10,7 +11,8 @@ class Genre(models.Model):
         return self.name
 
 
-from django.urls import reverse # Used to generate URLs by reversing the URL patterns
+
+
 
 class Book(models.Model):
     """Model representing a book (but not a specific copy of a book)."""
@@ -22,7 +24,7 @@ class Book(models.Model):
 
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
     isbn = models.CharField('ISBN', max_length=13, unique=True,
-                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
+                            help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
 
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
