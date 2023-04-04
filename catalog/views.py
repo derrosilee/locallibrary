@@ -34,4 +34,4 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
     model = Book
-    template_name = ''
+    template_name = 'book_detail.html'
