@@ -11,6 +11,7 @@ def index(request):
     num_instances = BookInstance.objects.all().count()
 
     num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
 
     # Available books (status = 'a')
     num_instances_available = BookInstance.objects.filter(status__exact='a').count()
