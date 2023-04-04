@@ -29,3 +29,4 @@ def index(request):
 
 class BookListView(generic.ListView):
     model = Book
+    template_name = 'book_list.html'
