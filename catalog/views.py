@@ -125,6 +125,7 @@ class AuthorCreate(CreateView):
     model = Author
     fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
     initial = {'date_of_death': '11/06/2020'}
+    template_name = 'author_form.html'
 
 
 class AuthorUpdate(UpdateView):
