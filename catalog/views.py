@@ -143,3 +143,4 @@ class BookCreate(PermissionRequiredMixin, CreateView):
     model = Book
     fields = ['title', 'author', 'summary', 'isbn', 'genre', 'language']
     permission_required = 'catalog.can_mark_returned'
+    template_name = 'book_form.html'
