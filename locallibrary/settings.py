@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -8,7 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_fd^ffd1yimvpv*1h3l&fpbgy$0ei3(3nc^&prys_h-zb9qnr%'
+# SECRET_KEY = 'django-insecure-_fd^ffd1yimvpv*1h3l&fpbgy$0ei3(3nc^&prys_h-zb9qnr%'
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
