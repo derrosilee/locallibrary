@@ -16,7 +16,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-ALLOWED_HOSTS = ['https://locallibrary-production-5f18.up.railway.app/']
+ALLOWED_HOSTS = ['https://locallibrary-production-5f18.up.railway.app']
+
+CSRF_TRUSTED_ORIGINS = ['https://locallibrary-production-5f18.up.railway.app']
 
 # Application definition
 
