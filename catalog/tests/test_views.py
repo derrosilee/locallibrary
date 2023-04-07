@@ -27,7 +27,7 @@ class AuthorListViewTest(TestCase):
     def test_view_uses_correct_template(self):
         response = self.client.get(reverse('authors'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'catalog/author_list.html')
+        self.assertTemplateUsed(response, 'author_list.html')
 
     def test_pagination_is_ten(self):
         response = self.client.get(reverse('authors'))
