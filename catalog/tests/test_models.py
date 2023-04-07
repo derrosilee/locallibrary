@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from catalog.models import Author
+from catalog.models import Author, Book
 
 
 class AuthorModelTest(TestCase):
@@ -33,3 +33,13 @@ class AuthorModelTest(TestCase):
         author = Author.objects.get(id=1)
         # This will also fail if the urlconf is not defined.
         self.assertEqual(author.get_absolute_url(), '/catalog/author/1')
+
+
+class BookModelTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        Book.objects.create(title='Hello', isbn='World')
+
+    def test_get_absolute_url(self):
+        book = Book.objects.get(id=1)
+        self.assertEqual(book.get_absolute_url(), '/catalog/book/1')
